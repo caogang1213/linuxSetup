@@ -7,16 +7,7 @@ set backspace=2
 set nocompatible              " required
 filetype off                  " required
 
-au BufNewFile,BufRead *.py
-                \ set tabstop=4
-                \ set softtabstop=4
-                \ set shiftwidth=4
-                \ set textwidth=79
-                \ set expandtab
-                \ set autoindent
-                \ set fileformat=unix
-
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -41,3 +32,6 @@ filetype plugin indent on    " requiredi
 
 let python_highlight_all=1
 syntax on
+
+map <F10> :NERDTreeToggle<CR>
+
