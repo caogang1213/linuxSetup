@@ -93,6 +93,8 @@ sudo zypper install scim-pinyin
 sudo apt-get install python-pip python-dev
 sudo python2.7 -m pip install --upgrade \
   https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.3.0-cp27-none-linux_x86_64.whl
+ 
+sudo python2/7 -m pip install --upgrade pip
 
 #------------------------------
 # install python packages
