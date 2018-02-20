@@ -32,7 +32,7 @@ sudo apt-get install htop
 # case 2: openSUSE
 sudo apt-get install zypper
 sudo zypper ref
-sudo zypper install -t parttern devel_C_C++ devel_kernel devel_basis
+sudo zypper install -t pattern devel_C_C++ devel_kernel devel_basis
 sudo zypper install gcc-c++ qt-devel
 
 
