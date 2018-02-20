@@ -33,6 +33,8 @@ sudo apt-get install htop
 sudo apt-get install zypper
 sudo zypper ref
 sudo zypper install -t parttern devel_C_C++ devel_kernel devel_basis
+sudo zypper install gcc-c++ qt-devel
+
 
 sudo zypper install wget git cmake pkg-config
 
@@ -107,6 +109,31 @@ sudo python2.7 -m pip install matplotlib lxml Pillow scipy
 
 #------------------------------
 # install opencv
+cd /home/gangcao/
+sudo git clone https://github.com/Itseez/opencv.git
+sudo git clone https://github.com/Itseez/opencv_contrib.git
+cd opencv_contrib/
+sudo git checkout 3.2.0
+cd ..
+cd opencv
+sudo git checkout 3.2.0
+sudo mkdir build
+cd build/
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D WITH_QT=ON -D WITH_CUDA=ON \
+      -D WITH_OPENGL=ON \
+      -D BUILD_PERF_TESTS=OFF \
+      -D BUILD_TESTS=OFF \
+      -D OPENCV_EXTRA_MODULES_PATH=/home/gangcao/opencv_contrib/modules/ \
+      -D CMAKE_INSTALL_PREFIX=/opt/opencv-3 ../
+sudo make -j8
+sudo make install
+sudo ln -s /opt/opencv-3 /opt/opencv
+sudo touch  /etc/ld.so.conf.d/opencv.conf
+echo "/opt/opencv/lib" >> /etc/ld.so.conf.d/opencv.conf
+# For pkg-config
+echo "export PKG_CONFIG_PATH="/opt/opencv/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH="/opt/opencv/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
 
 #------------------------------
 # install google chromium
