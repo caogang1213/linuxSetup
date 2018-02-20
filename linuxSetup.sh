@@ -32,7 +32,7 @@ sudo apt-get install htop
 # case 2: openSUSE
 sudo apt-get install zypper
 sudo zypper ref
-sudo zypper install -t parttern devel_C_C++ devel_kernel
+sudo zypper install -t parttern devel_C_C++ devel_kernel devel_basis
 
 sudo zypper install wget git cmake pkg-config
 
@@ -113,7 +113,7 @@ sudo python2.7 -m pip install matplotlib lxml Pillow scipy
 sudo apt-get install chromium-browser
 
 #------------------------------
-# install tex full
+# install texlive full
 
 #------------------------------
 # install texstudio
@@ -137,9 +137,6 @@ sudo rm master.zip
 
 #------------------------------
 # install terminator
-
-#------------------------------
-# install tensorflow
 
 #------------------------------
 # install faster-rcnn
