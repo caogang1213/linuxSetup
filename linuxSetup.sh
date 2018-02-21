@@ -82,6 +82,8 @@ sudo vim ~/.bashrc
 echo "export PATH="/opt/Qt/bin:$PATH"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH="/opt/Qt/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
 
+sudo zypper in libpcap-devel libcap-devel libcap-progs
+
 #------------------------------
 # install scim-pinyin
 sudo zypper addrepo https://download.opensuse.org/repositories/M17N/openSUSE_Leap_42.2/M17N.repo
@@ -130,14 +132,22 @@ echo "export PKG_CONFIG_PATH="/opt/opencv/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/
 echo "export LD_LIBRARY_PATH="/opt/opencv/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
 
 #------------------------------
-# install google chromium
-sudo apt-get install chromium-browser
+# install google chrome
+cd /home/gangcao/Desktop
+sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
+sudo zypper ref
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub
+sudo zypper in google-chrome-stable
 
 #------------------------------
-# install texlive full
+# install texlive full by Yast
 
 #------------------------------
 # install texstudio
+sudo zypper addrepo https://download.opensuse.org/repositories/Publishing/openSUSE_Leap_42.3/Publishing.repo
+sudo zypper refresh
+sudo zypper install texstudio
 
 #------------------------------
 # update vim
